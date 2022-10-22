@@ -30,7 +30,7 @@ public class Line {
   }
   public Line(LineSegment line) {
     float bottom = line.p2.x - line.p1.x;
-    if (bottom >= 0.3) {
+    if (bottom >= 0.3 || bottom <= -0.3) {
       a = (line.p2.y - line.p1.y) / bottom;
     } else {
       a = Float.MAX_VALUE;
@@ -94,6 +94,12 @@ boolean isPositive(float value) {
   }
 }
 
+Point interceptPoint(Line line1, Line line2) {
+  float x = (line2.b - line1.b) / (line1.a - line2.a);
+  float y = line1.a * x + line1.b;
+  return new Point(x, y);
+}
+
 LineSegment lineSeg1;
 LineSegment lineSeg2;
 
@@ -131,4 +137,12 @@ void draw() {
   }
   lineSeg1.draw();
   lineSeg2.draw();
+  
+  line1 = lineSeg1.toLine();
+  line2 = lineSeg2.toLine();
+  
+  Point inter = interceptPoint(line1, line2);
+  fill(255, 255, 0);
+  noStroke();
+  circle(inter.x, inter.y, 3);
 }
