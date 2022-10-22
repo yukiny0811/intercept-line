@@ -145,4 +145,10 @@ void draw() {
   fill(255, 255, 0);
   noStroke();
   circle(inter.x, inter.y, 3);
+  
+  fill(255, 255, 255);
+  text("line1: a: " + str(line1.a) + " b: " + str(line1.b), 10, 15);
+  text("line2: a: " + str(line2.a) + " b: " + str(line2.b), 10, 30);
+  text("intercepting point x: " + str(inter.x), 10, 45);
+  text("intercepting point y: " + str(inter.y), 10, 60);
 }
