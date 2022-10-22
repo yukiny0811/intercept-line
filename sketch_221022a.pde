@@ -193,6 +193,7 @@ void draw() {
   text("intercepting point y: " + str(inter.y), 10, 60);
   
   /*test*/
+  //clear();
   //LineSegment seg1 = new LineSegment(new Point(100, 100), new Point(300, 300));
   //LineSegment seg2 = new LineSegment(new Point(100, 400), new Point(200, 300));
   //stroke(50, 50, 50);
