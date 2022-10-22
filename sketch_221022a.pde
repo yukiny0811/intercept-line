@@ -121,6 +121,9 @@ void draw() {
   lineSeg2.p1.y = 500 + movingY + sin(smallMovingY) * 100;
   lineSeg2.p2.x = 500 + movingX + cos(smallMovingX + PI) * 100;
   lineSeg2.p2.y = 500 + movingY + sin(smallMovingY + PI) * 100;
+  stroke(50, 50, 50);
+  lineSeg1.toLine().draw();
+  lineSeg2.toLine().draw();
   if (intercept(lineSeg1, lineSeg2)) {
     stroke(0, 255, 255);
   } else {
